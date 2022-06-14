@@ -24,7 +24,7 @@ function Write-Log {
 #Run Sysprep
 try{
     write-output "BIS-F Starting"
-    Start-Process -filepath 'c:\program files (x86)\base image script framework (BIS-F)\preparebaseimage.cmd' -ErrorAction Stop
+    Start-Process -filepath 'c:\tools\preparation.cmd' -ErrorAction Stop
 }
 catch {
     $ErrorMessage = $_.Exception.message
