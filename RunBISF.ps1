@@ -24,7 +24,8 @@ function Write-Log {
 #Run Sysprep
 try{
     write-output "BIS-F Starting"
-    Start-Process -filepath 'c:\tools\preparation.cmd' -ErrorAction Stop
+    Start-Process -filepath 'c:\tools\preparation.cmd' -ErrorAction Stop -Wait
+    Start-Process -filepath "c:\windows\system32\sysprep\sysprep.exe" -ArgumentList "/generalize /mode:vm /shutdown /oobe" -ErrorAction Stop
 }
 catch {
     $ErrorMessage = $_.Exception.message
